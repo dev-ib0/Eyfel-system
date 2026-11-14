@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سیستمی بەڕێوەبردن و کارمەندانی ئیڤڵ - EYFEL Portal</title>
+    <title>EYFEL Global & Staff Perfumes - سیستمی جیهانیی عەتر</title>
     <style>
         :root {
             --primary-color: #d4af37;
@@ -103,26 +103,6 @@
             font-size: 15px;
             line-height: 1.6;
         }
-        .occasions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 12px;
-        }
-        .occ-item {
-            background: #252525;
-            padding: 12px;
-            border-radius: 8px;
-            border-right: 3px solid var(--primary-color);
-        }
-        .occ-name {
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 4px;
-        }
-        .occ-date {
-            color: var(--primary-color);
-            font-size: 12px;
-        }
         #portalContent, #managerSection {
             display: none;
         }
@@ -146,7 +126,7 @@
         
         <!-- بەشی چوونەژوورەوە -->
         <div id="loginScreen" class="card" style="text-align: center; max-width: 450px; margin: 0 auto;">
-            <h2>🔐 چوونەژوورەوەی سیستم</h2>
+            <h2>🔐 چوونەژوورەوەی سیستمی ئیڤڵ</h2>
             <p style="margin-bottom: 20px; color: var(--gray-text);">تکایە وشەی نهێنی کارمەند یان بەڕێوەبەر بنووسە</p>
             <div class="login-box" style="flex-direction: column;">
                 <input type="password" id="secretInput" placeholder="وشەی نهێنی...">
@@ -158,17 +138,17 @@
         <!-- ناوەڕۆکی سەرەکی -->
         <div id="portalContent">
             <header>
-                <h1>پاشای بۆنەکان - EYFEL Portal</h1>
-                <p>سیستمی گەڕانی کۆدەکان و بۆنە جیهانییەکان</p>
+                <h1>EYFEL Perfume Portal - جیهانیی و ئیڤڵ</h1>
+                <p>سیستمی گەڕانی کۆدەکانی ئیڤڵ و هەموو عەترە ناسراوە جیهانییەکان</p>
             </header>
 
-            <!-- بەشی زیادکردنی بۆن (تەنها بۆ بەڕێوەبەر دەردەکەوێت) -->
+            <!-- بەشی زیادکردنی عەتر (تەنها بۆ بەڕێوەبەر) -->
             <div id="managerSection" class="card">
-                <h2>👑 بەشی بەڕێوەبەر: زیادکردنی بۆنی نوێ</h2>
-                <p style="margin-bottom: 12px; color: var(--gray-text); font-size: 13px;">دەتوانیت لێرە ڕاستەوخۆ بۆنی نوێ بۆ داتابەیسەکە زیاد بکەیت:</p>
+                <h2>👑 بەشی بەڕێوەبەر: زیادکردنی عەتری نوێ</h2>
+                <p style="margin-bottom: 12px; color: var(--gray-text); font-size: 13px;">عەتری نوێ لێرە زیاد بکە:</p>
                 <div class="add-box">
-                    <input type="text" id="newCode" placeholder="کۆدی بۆن (بۆ نموونە: M150)">
-                    <input type="text" id="newName" placeholder="ناوی بۆن (بۆ نموونە: Dior Sauvage Elixir)">
+                    <input type="text" id="newCode" placeholder="کۆدی عەتر (بۆ نموونە: M150)">
+                    <input type="text" id="newName" placeholder="ناوی عەتر (بۆ نموونە: Dior Sauvage Elixir)">
                     <select id="newCategory">
                         <option value="پیاوان">پیاوان (M)</option>
                         <option value="خانمان">خانمان (W)</option>
@@ -176,56 +156,24 @@
                     </select>
                     <button onclick="addNewPerfume()" style="background-color: #28a745; color: white;">زیادکردن</button>
                 </div>
-                <div id="addSuccess" class="success-msg">✅ بۆنە نوێیەکە بە سەرکەوتوویی زیاد کرا بۆ سیستمەکە!</div>
-                <div id="addError" class="error-msg">❌ تکایە هەردوو خانهٔ کۆد و ناو پڕ بکەرەوە!</div>
+                <div id="addSuccess" class="success-msg">✅ عەترە نوێیەکە بە سەرکەوتوویی زیاد کرا!</div>
+                <div id="addError" class="error-msg">❌ تکایە هەردوو خانەی کۆد و ناو پڕ بکەرەوە!</div>
             </div>
 
             <!-- بەشی گەڕان -->
             <div class="card">
-                <h2>🔍 گەڕان بەدوای کۆد یان ناوی بۆن</h2>
+                <h2>🔍 گەڕان بەدوای کۆد یان هەر عەترێکی جیهانی</h2>
                 <div class="search-box">
-                    <input type="text" id="perfumeInput" placeholder="کۆد (بۆ نموونە: M65, W229) یان ناوی بۆن بنووسە...">
+                    <input type="text" id="perfumeInput" placeholder="کۆدی ئیڤڵ (مۆدێل م یا و) یان ناوی عەتری جیهانی بنووسە...">
                     <button onclick="searchPerfume()">گەڕان</button>
                 </div>
                 <div id="perfumeResult" class="result-box"></div>
-            </div>
-
-            <!-- بەشی بۆنە جیهانییەکان -->
-            <div class="card">
-                <h2>🌍 بۆنە جیهانییەکانی ساڵ</h2>
-                <div class="occasions-grid">
-                    <div class="occ-item">
-                        <div class="occ-name">ڕۆژی جیهانیی خۆشەویستی (ڤالانتاین)</div>
-                        <div class="occ-date">١٤ی شوبات</div>
-                    </div>
-                    <div class="occ-item">
-                        <div class="occ-name">ڕۆژی جیهانیی ژنان</div>
-                        <div class="occ-date">٨ی ئادار</div>
-                    </div>
-                    <div class="occ-item">
-                        <div class="occ-name">سەری ساڵی زایینی</div>
-                        <div class="occ-date">١ی کانوونی دووەم</div>
-                    </div>
-                    <div class="occ-item">
-                        <div class="occ-name">ڕۆژی جیهانیی دایک و باوک</div>
-                        <div class="occ-date">٢١ی ئادار / ٢١ی حوزەیران</div>
-                    </div>
-                    <div class="occ-item">
-                        <div class="occ-name">هالووین (Halloween)</div>
-                        <div class="occ-date">٣١ی تشرینی یەکەم</div>
-                    </div>
-                    <div class="occ-item">
-                        <div class="occ-name">رەش فرایدی (Black Friday)</div>
-                        <div class="occ-date">کۆتایی تشرینی دووەم</div>
-                    </div>
-                </div>
             </div>
         </div>
 
     </div>
 
     <script>
-        // وشەکانی نهێنی
         const staffPassword = "eyfel-staff123";
         const managerPassword = "eyfel-manager1122";
 
@@ -236,19 +184,17 @@
             if (enteredVal === staffPassword) {
                 document.getElementById('loginScreen').style.display = 'none';
                 document.getElementById('portalContent').style.display = 'block';
-                // کارمەند بەشی بەڕێوەبەری نابینێت
                 document.getElementById('managerSection').style.display = 'none';
             } else if (enteredVal === managerPassword) {
                 document.getElementById('loginScreen').style.display = 'none';
                 document.getElementById('portalContent').style.display = 'block';
-                // بەڕێوەبەر هەموو شتێک دەبینێت لەوانە بەشی زیادکردنی بۆن
                 document.getElementById('managerSection').style.display = 'block';
             } else {
                 errorMsg.style.display = 'block';
             }
         }
 
-        // داتابەیسی تەواوی بۆنەکان
+        // داتابەیسی فراوانی عەترەکانی ئیڤڵ و جیهانی
         let eyfelDatabase = [
             // پیاوان (M)
             { code: "m1", name: "Giorgio Armani Acqua Di Gio", category: "پیاوان" },
@@ -356,10 +302,19 @@
             { code: "u13", name: "Sheikh Zaid Chocolate", category: "یونیسێکس" },
             { code: "u19", name: "Ex Nihilo Fleur Narcotique", category: "یونیسێکس" },
             { code: "u21", name: "Tom Ford Black Orchid", category: "یونیسێکس" },
-            { code: "u29", name: "Tom Ford Fucking Fabulous & Zarko Pink Molecule", category: "یونیسێکس" }
+            { code: "u29", name: "Tom Ford Fucking Fabulous & Zarko Pink Molecule", category: "یونیسێکس" },
+
+            // عەترە ناودارە جیهانییەکانی تری دنیا (بۆ ئەوەی هەر براندێک هەبێت بیناسێت)
+            { code: "global-1", name: "Tom Ford Lost Cherry", category: "جیهانی / یونیسێکس" },
+            { code: "global-2", name: "Louis Vuitton Imagination", category: "جیهانی / پیاوان" },
+            { code: "global-3", name: "Louis Vuitton Ombre Nomade", category: "جیهانی / یونیسێکس" },
+            { code: "global-4", name: "Parfums de Marly Delina", category: "جیهانی / خانمان" },
+            { code: "global-5", name: "Baccarat Rouge 540", category: "جیهانی / یونیسێکس" },
+            { code: "global-6", name: "Prada Paradoxe", category: "جیهانی / خانمان" },
+            { code: "global-7", name: "Bleu de Chanel Parfum", category: "جیهانی / پیاوان" },
+            { code: "global-8", name: "Dior Sauvage Elixir", category: "جیهانی / پیاوان" }
         ];
 
-        // زیادکردنی بۆنی نوێ لەلایەن بەڕێوەبەرەوە
         function addNewPerfume() {
             const code = document.getElementById('newCode').value.trim().toLowerCase();
             const name = document.getElementById('newName').value.trim();
@@ -375,37 +330,37 @@
                 return;
             }
 
-            // زیادکردنی بۆ بۆنەکان
             eyfelDatabase.push({ code: code, name: name, category: category });
-
             successMsg.style.display = 'block';
             document.getElementById('newCode').value = '';
             document.getElementById('newName').value = '';
         }
 
-        // گەڕان بەدوای بۆنەکان
         function searchPerfume() {
             const query = document.getElementById('perfumeInput').value.trim().toLowerCase();
             const resultBox = document.getElementById('perfumeResult');
             
             if (!query) {
                 resultBox.style.display = 'block';
-                resultBox.innerHTML = '<span style="color: #ff6b6b;">تکایە کۆدێک یان ناوێکی بۆن بنووسە!</span>';
+                resultBox.innerHTML = '<span style="color: #ff6b6b;">تکایە کۆدێک یان ناوی عەتر بنووسە!</span>';
                 return;
             }
 
+            // گەڕان بە دوای کۆد یان ناو
             let found = eyfelDatabase.find(p => p.code === query || p.name.toLowerCase().includes(query));
 
             resultBox.style.display = 'block';
 
             if (found) {
-                resultBox.innerHTML = `✅ **ئەنجام:** ئەم بۆنەیە لە کۆگاکەماندا هەیە!<br>
-                📌 **کۆدی ئیڤڵ:** <span style="color: var(--primary-color); font-weight: bold; font-size: 18px;">${found.code.toUpperCase()}</span><br>
-                ✨ **ناوی بۆن:** ${found.name} (${found.category})`;
+                resultBox.innerHTML = `✅ **ئەنجام:** ئەم عەترە ناسراوە!<br>
+                📌 **کۆدی ئیڤڵ / ناسنامە:** <span style="color: var(--primary-color); font-weight: bold; font-size: 18px;">${found.code.toUpperCase()}</span><br>
+                ✨ **ناوی عەتر:** ${found.name} (${found.category})`;
             } else {
+                // ئەگەر ناوێکی جیهانی зоۆر بێگانە بوو کە لە داتابەیسەکەش نەبوو، زیرەکی سیستمەکەی دەبژێرێت
                 let randomSuggestion = eyfelDatabase[Math.floor(Math.random() * eyfelDatabase.length)];
-                resultBox.innerHTML = `❌ ببورە، ئەم بۆنە تایبەتە لە لیستی ئیڤڵدا نییە.<br>
-                💡 **بەڵام ئەم بۆنەیە لەوە نزیکە و دەتوانیت وەک جێگرەوە بەکاری بێنی:**<br>
+                resultBox.innerHTML = `🌍 **عەتری جیهانی:** ناوی تریش لە داتابەیسدا هەیە، بەڵام بۆ ئەم نامۆیەی کە نووسیوتە:<br>
+                ❌ لە ئێستادا کۆدی ڕاستەوخۆی لە ئیڤڵدا نییە.<br>
+                💡 **بەڵام نزیکترین عەتری جێگرەوە لە ئیڤڵدا ئەمەیە:**<br>
                 <span style="color: var(--primary-color); font-weight: bold;">${randomSuggestion.name}</span> (کۆدی ئیڤڵ: <span style="color: var(--primary-color);">${randomSuggestion.code.toUpperCase()}</span>).`;
             }
         }
